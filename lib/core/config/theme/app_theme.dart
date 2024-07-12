@@ -15,6 +15,7 @@ class AppTheme {
       ),
     ),
     brightness: Brightness.light,
+    fontFamily: 'Satoshi',
   );
 
   static final darkTheme = ThemeData(
@@ -30,5 +31,6 @@ class AppTheme {
       ),
     ),
     brightness: Brightness.dark,
+    fontFamily: 'Satoshi',
   );
 }
