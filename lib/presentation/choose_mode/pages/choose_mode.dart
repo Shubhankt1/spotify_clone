@@ -18,6 +18,7 @@ class ChooseMode extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          // BG image
           Container(
             padding: const EdgeInsets.all(40.0),
             decoration: const BoxDecoration(
@@ -27,6 +28,7 @@ class ChooseMode extends StatelessWidget {
               ),
             ),
           ),
+          // Black overlay
           Container(
             color: Colors.black.withOpacity(0.15),
           ),

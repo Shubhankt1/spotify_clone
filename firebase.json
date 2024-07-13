@@ -1,0 +1,40 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "spotify-clone-st",
+          "appId": "1:508845039777:android:614c5281d3593af588d0e0",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "spotify-clone-st",
+          "appId": "1:508845039777:ios:2f207c46b1d9a3de88d0e0",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "spotify-clone-st",
+          "appId": "1:508845039777:ios:2f207c46b1d9a3de88d0e0",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "spotify-clone-st",
+          "configurations": {
+            "android": "1:508845039777:android:614c5281d3593af588d0e0",
+            "ios": "1:508845039777:ios:2f207c46b1d9a3de88d0e0",
+            "macos": "1:508845039777:ios:2f207c46b1d9a3de88d0e0",
+            "windows": "1:508845039777:web:50b11856fa49b1b888d0e0"
+          }
+        }
+      }
+    }
+  }
+}
