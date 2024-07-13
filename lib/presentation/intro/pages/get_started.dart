@@ -18,13 +18,13 @@ class GetStarted extends StatelessWidget {
             padding: const EdgeInsets.all(40.0),
             decoration: const BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 image: AssetImage(AppImages.inroBg),
               ),
             ),
           ),
           Container(
-            color: Colors.black.withOpacity(0.15),
+            color: Colors.black.withOpacity(0.25),
           ),
           Padding(
             padding: const EdgeInsets.all(40.0),

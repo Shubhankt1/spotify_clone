@@ -23,7 +23,7 @@ class ChooseMode extends StatelessWidget {
             padding: const EdgeInsets.all(40.0),
             decoration: const BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 image: AssetImage(AppImages.chooseModeBg),
               ),
             ),
