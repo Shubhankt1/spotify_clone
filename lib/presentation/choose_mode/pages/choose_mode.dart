@@ -24,6 +24,7 @@ class ChooseMode extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
+                alignment: Alignment.topCenter,
                 image: AssetImage(AppImages.chooseModeBg),
               ),
             ),
