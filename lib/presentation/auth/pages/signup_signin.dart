@@ -83,18 +83,21 @@ class SignupSignin extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const SigninPage(),
+                                builder: (context) => SigninPage(),
                               ),
                             );
                           },
-                          child: Text(
-                            'Sign In',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: context.isDarkMode
-                                  ? Colors.white
-                                  : Colors.black,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 25),
+                            child: Text(
+                              'Sign In',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: context.isDarkMode
+                                    ? Colors.white
+                                    : Colors.black,
+                              ),
                             ),
                           ),
                         ),
