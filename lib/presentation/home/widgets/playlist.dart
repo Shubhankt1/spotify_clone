@@ -5,6 +5,7 @@ import 'package:spotify_clone/core/config/theme/app_colors.dart';
 import 'package:spotify_clone/domain/entities/song/song.dart';
 import 'package:spotify_clone/presentation/home/bloc/playlist_cubit.dart';
 import 'package:spotify_clone/presentation/home/bloc/playlist_state.dart';
+import 'package:spotify_clone/presentation/song_player/pages/song_player.dart';
 
 class Playlist extends StatelessWidget {
   const Playlist({super.key});
@@ -83,24 +84,36 @@ class Playlist extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(width: 10),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            songs[index].title,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              // fontSize: 15,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SongPlayerPage(
+                                songEntity: songs[index],
+                              ),
                             ),
-                          ),
-                          Text(
-                            songs[index].artist,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 11,
+                          );
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              songs[index].title,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                // fontSize: 15,
+                              ),
                             ),
-                          ),
-                        ],
+                            Text(
+                              songs[index].artist,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 11,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
-  const BasicAppBar({super.key, this.title});
+  final Widget? action;
+  const BasicAppBar({super.key, this.title, this.action});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +20,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
           : Container(),
       title: title ?? const Text(''),
       centerTitle: true,
+      actions: [action ?? const SizedBox()],
     );
   }
 
