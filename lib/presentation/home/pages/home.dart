@@ -7,6 +7,7 @@ import 'package:spotify_clone/core/config/assets/app_vectors.dart';
 import 'package:spotify_clone/core/config/theme/app_colors.dart';
 import 'package:spotify_clone/presentation/home/widgets/news_songs.dart';
 import 'package:spotify_clone/presentation/home/widgets/playlist.dart';
+import 'package:spotify_clone/presentation/profile/pages/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,6 +34,17 @@ class _HomePageState extends State<HomePage>
           AppVectors.logo,
           height: 40,
           width: 40,
+        ),
+        action: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Profile(),
+              ),
+            );
+          },
+          icon: const Icon(Icons.person, size: 36),
         ),
       ),
       body: Padding(

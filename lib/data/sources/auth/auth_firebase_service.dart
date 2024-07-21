@@ -1,14 +1,18 @@
 import 'dart:developer';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:spotify_clone/core/config/constants/app_urls.dart';
 import 'package:spotify_clone/data/models/auth/create_user.dart';
 import 'package:spotify_clone/data/models/auth/signin_user.dart';
+import 'package:spotify_clone/data/models/auth/user.dart';
+import 'package:spotify_clone/domain/entities/auth/user.dart' as user_entity;
 
 abstract class AuthFirebaseService {
   Future<Either> signup(CreateUser createUser);
   Future<Either> signin(SigninUser signinUser);
+  Future<Either> getUser();
 }
 
 class AuthFirebaseServiceImpl extends AuthFirebaseService {
@@ -56,6 +60,29 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         message = 'Account Already Exists!';
       }
       return Left(message);
+    }
+  }
+
+  @override
+  Future<Either> getUser() async {
+    try {
+      FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+      FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+
+      var user = await firebaseFirestore
+          .collection('Users')
+          .doc(firebaseAuth.currentUser?.uid)
+          .get();
+
+      UserModel userModel = UserModel.fromJson(user.data()!);
+
+      userModel.imageUrl =
+          firebaseAuth.currentUser?.photoURL ?? AppUrls.defaultProfileImage;
+
+      user_entity.User userEntity = userModel.toEntity();
+      return Right(userEntity);
+    } on Exception catch (e) {
+      return Left(e);
     }
   }
 }

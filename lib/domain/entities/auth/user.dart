@@ -1,11 +1,11 @@
 class User {
-  String? userId;
   String? fullName;
   String? email;
+  String? imageUrl;
 
   User({
-    this.userId,
     this.fullName,
     this.email,
+    this.imageUrl,
   });
 }

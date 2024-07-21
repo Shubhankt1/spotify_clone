@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
   final Widget? action;
-  const BasicAppBar({super.key, this.title, this.action});
+  final Color? backgroundColor;
+  const BasicAppBar({super.key, this.title, this.action, this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: backgroundColor ?? Colors.transparent,
       elevation: 0,
       leading: Navigator.canPop(context)
           ? IconButton(
